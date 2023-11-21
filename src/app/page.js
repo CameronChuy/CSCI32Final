@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import PageTitle from './components/PageTitle'
 import PageContent from './components/PageContent'
 import Card from './components/Card'
+import Footer from './components/Footer'
 import { createClient } from '@supabase/supabase-js'
 
 // Create a single supabase client for interacting with your database
@@ -14,8 +15,6 @@ export default async function Home() {
 const { data: Cards, error } = await supabase
 .from('Cards')
 .select("*")
-
-console.log(Cards)
         
   return (
   <div>
@@ -27,6 +26,7 @@ console.log(Cards)
         <Card key={index} title={card.title} img={card.img} description={card.description} />
       ))}
     </div>
+    <Footer />
   </div>
   )
 }

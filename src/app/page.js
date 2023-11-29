@@ -5,6 +5,7 @@ import PageContent from './components/PageContent'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import { createClient } from '@supabase/supabase-js'
+import { findCards } from './utils/supabase-client'
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient('https://uctbeefthbopurqnxuvv.supabase.co', process.env.SUPABASE_SERVICE_ROLE_KEY)
@@ -12,16 +13,14 @@ const supabase = createClient('https://uctbeefthbopurqnxuvv.supabase.co', proces
 export const revalidate = 0
 export default async function Home() {
   
-const { data: Cards, error } = await supabase
-.from('Cards')
-.select("*")
+const Cards = await findCards()
         
   return (
   <div>
     <Navbar />
     <PageTitle title="Home" />
     <PageContent />
-    <div className='flex  justify-between gap-4 w-full my-6 fle-wrap'>
+    <div className='flex justify-between gap-4 w-full my-6 fle-wrap'>
       {Cards.map((card, index) => (
         <Card key={index} title={card.title} img={card.img} description={card.description} />
       ))}

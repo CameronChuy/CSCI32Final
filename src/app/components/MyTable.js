@@ -13,20 +13,20 @@ export default function MyTable({columns = defaultColumns, records = defaultReco
     <Table.Root>
     <Table.Header>
         <Table.Row>
-        {columns.map((column) => (
-            <Table.ColumnHeaderCell>{column.title}</Table.ColumnHeaderCell>
+        {columns.map((column, i) => (
+            <Table.ColumnHeaderCell key = {i}>{column.title}</Table.ColumnHeaderCell>
             ))}
         </Table.Row>
     </Table.Header>
 
     <Table.Body>
         {records.map((record) => (
-            <Table.Row>
+            <Table.Row key = {record.id}>
                 {columns.map((column, i) => 
                 i === 0 ? (
-                    <Table.RowHeaderCell>{record[column.key]}</Table.RowHeaderCell>
+                    <Table.RowHeaderCell key = {`${record.id}-${i}`}>{record[column.key]}</Table.RowHeaderCell>
                 ) : (
-                    <Table.Cell>{record[column.key]}</Table.Cell>
+                    <Table.Cell key ={`${record.id}-${i}`}>{record[column.key]}</Table.Cell>
                 ))}
             </Table.Row>
         ))}

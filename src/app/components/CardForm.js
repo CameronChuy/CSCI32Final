@@ -9,7 +9,6 @@ async function createCard(formData) {
     'use server'
     // get each field out of formData 
     // call supabase-client insertCard
-    console.log("test")
     const title = formData.get('title')
     const img = formData.get('img')
     const description = formData.get('description')

@@ -3,15 +3,13 @@ import Navbar from '../components/Navbar'
 import PageTitle from '../components/PageTitle'
 import PageContent from '../components/PageContent'
 import Card from '../components/Card'
-import { createClient } from '@supabase/supabase-js'
+import { findJewelry } from '../utils/supabase-client'
 
-const supabase = createClient('https://uctbeefthbopurqnxuvv.supabase.co', process.env.SUPABASE_SERVICE_ROLE_KEY)
+
 
 export const revalidate = 0
 
-let { data: JewelryInfo, error } = await supabase
-  .from('Jewelry')
-  .select('*')
+const JewelryInfo = await findJewelry()
 
 export default async function Jewelry() {
   return ( 

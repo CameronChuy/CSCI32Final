@@ -20,7 +20,7 @@ const Cards = await findCards()
     <Navbar />
     <PageTitle title="Home" />
     <PageContent />
-    <div className='flex justify-between gap-4 w-full my-6 fle-wrap'>
+    <div className='flex justify-between gap-4 w-full my-6 flex-wrap'>
       {Cards.map((card, index) => (
         <Card key={index} title={card.title} img={card.img} description={card.description} />
       ))}

@@ -7,10 +7,12 @@ export default function Item({
 }) {
     return( 
         <div>
-            <div>
-                <h1>{title}</h1>
-                <img className="max-w-full" src= {img}/>
-                <p className="text-gray-900">{description}</p>
+            <div className="flex " >
+                <img className="w-1/12" src= {img}/>
+                <div className="flex flex-col justify-evenly m-2" >
+                    <h1 className="font-bold" >{title}</h1>
+                    <p className="text-gray-900">{description}</p>
+                </div>
             </div>
         </div>
     )

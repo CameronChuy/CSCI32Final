@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-gradient-to-r from-zinc-800 to-slate-50" ${inter.className}`}>
+      <body className={`bg-gradient-to-r from-zinc-800 to-green-200" ${inter.className}`}>
         <Theme appearance="light" accentColor="amber" grayColor="slate" panelBackground="solid" scaling="90%">
           {children}
         </Theme>

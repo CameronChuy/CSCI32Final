@@ -1,6 +1,6 @@
+'use client'
 import Button from "./Button";
-
-
+import { useState, useEffect } from "react";
 
 export default function Card({
     title="Title",
@@ -8,12 +8,19 @@ export default function Card({
     description="Description"
 }) {
 
-    var cartItems = {}
+    const [cartItems, setCartItems] = useState([])
 
-    function addToCart(title, img, description) {
-        var itemAttributes = [{img}, {description}];
-        cartItems[{title}] = itemAttributes;
-        console.log("Success", {title})
+    useEffect(() => {
+        // This will run whenever cartItems changes
+        console.log(cartItems);
+    }, [cartItems]);
+
+    const addToCart = () => {
+        // Adding the new item to the cartItems state
+        const newItem = { title, description, img }
+        setCartItems([...cartItems, newItem])
+        console.log(cartItems)
+        console.log("Test")
     }
 
     return (
@@ -25,7 +32,7 @@ export default function Card({
             
         </div>
         <div className="flex justify-end align-bottom w-full">
-            <Button onClick={addToCart({title}, {description}, {img})}>Add Card</Button>
+            <Button onClick={addToCart}>Add Card</Button>
         </div>
     </div>
     );

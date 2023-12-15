@@ -23,9 +23,8 @@ export async function findCards() {
 export async function findJewelry() {
   const supabase = getClient()
 
-  let { data: Jewelry, error } = await supabase
+  const { data: Jewelry, error } = await supabase
   .from('Jewelry')
   .select('*')
-        console.log(Jewelry)
   return Jewelry
 }

@@ -8,8 +8,8 @@ const menuItems = [
         href: "/about"
     },
     {
-        title: "Jewelry",
-        href: "/jewelry"
+        title: "Stickers",
+        href: "/stickers"
     },
     {
         title: "Checkout",

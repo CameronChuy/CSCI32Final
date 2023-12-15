@@ -6,7 +6,6 @@ import Card from '../components/Card'
 import { findJewelry } from '../utils/supabase-client'
 
 
-
 export const revalidate = 0
 
 const JewelryInfo = await findJewelry()
@@ -15,9 +14,9 @@ export default async function Jewelry() {
   return ( 
     <div>
       <Navbar />
-      <PageTitle title="Jewelry" />
+      <PageTitle title="Stickers" />
       <PageContent content="My hand-crafted creations"/>
-      <div className='flex  justify-between gap-4 w-full my-6 fle-wrap'>
+      <div className='flex gap-6 w-full my-6 p-6 flex-wrap'>
         {JewelryInfo.map((card, index) => (
           <Card key={index} title={card.title} img={card.img} description={card.description} />
         ))}

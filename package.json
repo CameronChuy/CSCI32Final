@@ -13,7 +13,7 @@
     "@radix-ui/themes": "^2.0.1",
     "@supabase/supabase-js": "^2.38.4",
     "@types/chec__commerce.js": "^2.8.11",
-    "next": "14.0.1",
+    "next": "^14.0.5-canary.45",
     "react": "^18",
     "react-dom": "^18"
   },
